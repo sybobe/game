@@ -6,7 +6,7 @@
 <title>강건너기 게임</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; user-select: none; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f4f8; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 12px; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f4f8; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 12px 12px 72px; }
   #app { width: 100%; max-width: 440px; }
   .header { text-align: center; padding: 14px 0 10px; }
   .header h1 { font-size: 22px; font-weight: 600; color: #1a1a2e; }
@@ -42,7 +42,14 @@
   .msg-box button { padding: 12px 28px; border: none; border-radius: 10px; background: #185FA5; color: #fff; font-size: 15px; cursor: pointer; width: 100%; font-weight: 600; }
   .msg-box button:active { opacity: 0.85; }
   .guide { font-size: 12px; color: #888; text-align: center; padding: 5px 0 2px; line-height: 1.7; }
-  .credit { font-size: 11px; color: #bbb; text-align: center; padding: 10px 0 4px; }
+  footer {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: #1a1a2e; color: #aaa;
+    text-align: center; padding: 10px 16px;
+    font-size: 12px; line-height: 1.7;
+    z-index: 999; border-top: 1px solid #2e2e4a;
+  }
+  footer span { color: #7aa8d8; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -82,8 +89,12 @@
     <button class="btn" onclick="togglePause()">⏸ 일시정지</button>
   </div>
   <div class="guide" id="guide">← → 터치하거나 화면을 탭해서 이동</div>
-  <div class="credit">Made with ❤️ — 강건너기 게임</div>
 </div>
+
+<footer>
+  <div>© 2026 단원고등학교. All rights reserved.</div>
+  <div>Developed by <span>소영</span></div>
+</footer>
 
 <script>
 const canvas = document.getElementById('gc');
